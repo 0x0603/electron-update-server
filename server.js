@@ -13,7 +13,7 @@ app.use(cors());
 // Endpoint for electron-updater to check for updates
 app.get("/updates", (req, res) => {
   try {
-    const ymlPath = path.join(__dirname, "updates", "latest-mac.yaml");
+    const ymlPath = path.join(__dirname, "updates", "latest-mac.yml");
     const ymlContent = fs.readFileSync(ymlPath, 'utf8');
     const updateData = YAML.parse(ymlContent);
     res.json(updateData);
